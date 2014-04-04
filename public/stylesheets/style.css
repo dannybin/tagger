@@ -1,0 +1,26 @@
+
+
+h1{
+  text-align: center;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.navbar {
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+
+.btn-tag{
+  margin-top:5px;
+  width: 80px;
+}
+
+.header-link{
+  margin-top: 10px;
+  font-size: 20px;
+  color: white;
+}
