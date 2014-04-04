@@ -12,3 +12,15 @@ exports.index = function(req, res){
     });
   });
 };
+
+exports.update = function(req, res){
+  var id = req.body.id;
+  var publish = req.body.publish;
+  var topics = req.body.topics.split(',');
+  
+  r.table('news').get(id).update({publish: publish, m_topics: r.row('m_topics').append(topics)}).
+    run(self.connection, function(err, result) {
+        if (err) throw err;
+        else res.redirect('/tagged');
+    });
+}

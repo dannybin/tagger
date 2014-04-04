@@ -22,8 +22,8 @@ r.connect( {host: '162.242.238.193', port: 28015}, function(err, conn) {
     tagged.connection = conn;
 })
 
-hbs.registerHelper('if_set', function(a, opts) {
-    if(a != 'undefined')
+hbs.registerHelper('if_eq', function(a, b,  opts) {
+    if(a == b)
         return opts.fn(this);
     else
         return opts.inverse(this);
@@ -54,6 +54,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.post('/', routes.update);
 app.get('/tagged', tagged.index);
+app.post('/tagged', tagged.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

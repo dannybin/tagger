@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/jquery-2.0.3.min.js"></script>
+
     
 </head>
  
@@ -39,19 +39,24 @@
     <div class="col-md-10 col-md-offset-1">
       {{#each entries}}
     
-      <a href="{{link}}" target="_blank">{{title}}</a><br><br>
-      <b>Summary: </b><span class="summary">{{{summary}}}</span>
-      <br><br>
-      <form action="/", method="post">
-        <input type="radio", name="publish", value="true">Publish
-        <input type="radio", name="publish", value="false">Don't Publish<br><br>
-        <b>Tagged Topics: </b>{{m_topics}}<br><br>
-        <input type="hidden", name="id", value="{{id}}">
-        <input type="text", name="topics", class="form-control", style="width:50%;" placeholder="topics">
-        <button type="submit", name="submit", class="btn btn-sm btn-warning btn-tag" value="submit">Update!</button>
-      </form>
-      <br>
-      <hr>
+        <a href="{{link}}" target="_blank">{{title}}</a><br><br>
+        <b>Summary: </b><span class="summary">{{{summary}}}</span>
+        <br><br>
+        <form action="/tagged", method="post">
+        {{#if_eq publish "true"}}
+          <input type="radio", name="publish", value="true" checked="checked">Publish
+          <input type="radio", name="publish", value="false">Don't Publish<br><br>
+        {{else}}
+          <input type="radio", name="publish", value="true">Publish
+          <input type="radio", name="publish", value="false" checked="checked">Don't Publish<br><br>
+        {{/if_eq}}
+          <b>Tagged Topics: </b>{{m_topics}}<br><br>
+          <input type="hidden", name="id", value="{{id}}">
+          <input type="text", name="topics", class="form-control", style="width:50%;" placeholder="topics">
+          <button type="submit", name="submit", class="btn btn-sm btn-warning btn-tag" value="submit">Update!</button>
+        </form>
+        <br>
+        <hr>
       {{/each}}
     </div>
   </div>
