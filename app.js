@@ -9,7 +9,6 @@ var tagged = require('./routes/tagged');
 var http = require('http');
 var path = require('path');
 
-
 var app = express();
 var hbs = require('hbs');
 
