@@ -18,9 +18,10 @@ exports.index = function(req, res){
 exports.update = function(req, res){
   var id = req.body.id;
   var publish = req.body.publish;
+  var industry = req.body.industry;
   var topics = req.body.topics.split(",");
   
-  r.table('news').get(id).update({publish: publish, m_topics: topics}).
+  r.table('news').get(id).update({publish: publish, industry: industry, m_topics: topics}).
     run(self.connection, function(err, result) {
         if (err) throw err;
         else res.redirect('/');

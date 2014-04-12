@@ -32,7 +32,7 @@ app.set('view engine', 'html');
 app.engine('html', hbs.__express);
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3080);
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.favicon());
