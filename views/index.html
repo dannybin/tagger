@@ -49,10 +49,23 @@
         <b>Industry: </b><br>
         <div class="btn-group" data-toggle="buttons"> 
           <div class="btn btn-primary" style="margin:1px;">
-            <input type="radio", name="industry", value="8450e775-196e-4eff-b83d-cb345afe61dc">Tax & ERISA 
-          </div> 
+            <input type="radio", name="industry", value="b11ada4f-2436-4409-84d5-5cd7171dd1d6">Financial Services
+          </div>
+          
           <div class="btn btn-primary" style="margin:1px;">
             <input type="radio", name="industry", value="8874d1ad-1ead-4038-8a50-83454f652cef">Corporate Securities
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="762efa0a-b102-444a-bec0-ea0aa347242e">Housing & Real Estate
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="a154b453-dc47-4f67-90eb-3f2df8f5d9ed">Technology & Telecommunications
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="ef62eb3a-6972-4eee-8fde-6e6bd8053d58">Food, Drug & Healthcare
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="49203e41-edf8-4168-81e2-f73170e98e17">Consumer Protection
           </div>
           <div class="btn btn-primary" style="margin:1px;">
             <input type="radio", name="industry", value="8e0d3b30-0e21-4d70-b4e3-0373b3a418b1">Energy, Environmental & Natural Resources
@@ -63,9 +76,7 @@
           <div class="btn btn-primary" style="margin:1px;">
             <input type="radio", name="industry", value="c920615b-db56-4a13-8174-5833b4c6614b">Labor & Employment 
           </div>
-          <div class="btn btn-primary" style="margin:1px;">
-            <input type="radio", name="industry", value="ef62eb3a-6972-4eee-8fde-6e6bd8053d58">Food, Drug & Healthcare
-          </div>
+          
           <div class="btn btn-primary" style="margin:1px;">
             <input type="radio", name="industry", value="64ea5c9d-6b3b-463a-acdd-13b47f22be3c">Government Procurement & Administration
           </div>
@@ -76,22 +87,16 @@
             <input type="radio", name="industry", value="608b5cf4-c3a1-4391-9259-6d3f815330f7">Education
           </div>
           <div class="btn btn-primary" style="margin:1px;">
-            <input type="radio", name="industry", value="b11ada4f-2436-4409-84d5-5cd7171dd1d6">Financial Services
-          </div>
+            <input type="radio", name="industry", value="8450e775-196e-4eff-b83d-cb345afe61dc">Tax & ERISA 
+          </div> 
           <div class="btn btn-primary" style="margin:1px;">
             <input type="radio", name="industry", value="c485c8cf-f915-41fd-92d8-5f248afcd41a">Media & Entertainment
           </div>
           <div class="btn btn-primary" style="margin:1px;">
-            <input type="radio", name="industry", value="49203e41-edf8-4168-81e2-f73170e98e17">Consumer Protection
-          </div>
-          <div class="btn btn-primary" style="margin:1px;">
-            <input type="radio", name="industry", value="762efa0a-b102-444a-bec0-ea0aa347242e">Housing & Real Estate
-          </div>
-          <div class="btn btn-primary" style="margin:1px;">
-            <input type="radio", name="industry", value="a154b453-dc47-4f67-90eb-3f2df8f5d9ed">Technology & Telecommunications
-          </div>
-          <div class="btn btn-primary" style="margin:1px;">
             <input type="radio", name="industry", value="5cb8a0df-60a4-4f1a-8162-e867fa0bb670">Corporate Governance
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="irrelevant">Irrelevant
           </div>
         </div>
         <br><br>
@@ -99,7 +104,7 @@
 
         <b>Current Topics: </b>{{topics}}<br><br>
         <input type="hidden", name="id", value="{{id}}">
-        <input type="text", name="topics", class="form-control", style="width:50%;" placeholder="input topics, seperate by COMMA">
+        <input type="text", name="topics", class="form-control", style="width:50%;" placeholder="input topics, seperate by comma">
         <button type="submit", name="submit", class="btn btn-sm btn-success btn-tag" value="submit">Tag!</button>
       </form>
       <br>
