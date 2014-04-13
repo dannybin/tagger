@@ -39,7 +39,8 @@
     <div class="col-md-10 col-md-offset-1">
       {{#each entries}}
     
-      <a href="{{link}}" target="_blank">{{title}}</a><br><br>
+      <a href="{{link}}" target="_blank">{{title}}</a>&nbsp;&nbsp;
+      Source: {{source}}<br><br>
       <b>Summary: </b><span class="summary">{{{summary}}}</span>
       <br><br>
       <form action="/", method="post">
