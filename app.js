@@ -14,7 +14,7 @@ var hbs = require('hbs');
 
 var r = require('rethinkdb');
 var connection = null;
-r.connect( {host: '162.242.238.193', port: 28015}, function(err, conn) {
+r.connect( {host: 'localhost', port: 28015}, function(err, conn) {
     if (err) throw err;
     conn.use('jurispect');
     routes.connection = conn;
