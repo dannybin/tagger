@@ -6,7 +6,7 @@ var r = require('rethinkdb'),
 
 exports.index = function(req, res){
 
-  r.table('news').filter(function(tag){return tag.hasFields('publish').not()}).orderBy(r.desc('creation_time')).limit(1).run(self.connection, function(err, cursor){
+  r.table('news').filter(function(tag){return tag.hasFields('publish').not()}).orderBy(r.desc('creation_time')).limit(20).run(self.connection, function(err, cursor){
     cursor.toArray(function(err, results) {
       if(err) throw err;
       else res.render('index', {entries: results});
