@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var tagged = require('./routes/tagged');
+var interps = require('./routes/interps');
 var http = require('http');
 var path = require('path');
 
@@ -19,6 +20,7 @@ r.connect( {host: '162.242.238.193', port: 28015}, function(err, conn) {
     conn.use('jurispect');
     routes.connection = conn;
     tagged.connection = conn;
+    interps.connection = conn;
 })
 
 hbs.registerHelper('if_eq', function(a, b,  opts) {
@@ -54,6 +56,8 @@ app.get('/', routes.index);
 app.post('/', routes.update);
 app.get('/tagged', tagged.index);
 app.post('/tagged', tagged.update);
+app.get('/interps', interps.index);
+app.post('/interps', interps.update);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

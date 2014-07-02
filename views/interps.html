@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>News Tagger</title>
+    <title>Interps Tagger</title>
     
     <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
@@ -1279,42 +1279,37 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="navbar-brand navbar-left" href="#" name="top">Jurispect News Tagger!</a>
+        <a class="navbar-brand navbar-left" href="#" name="top">Jurispect Interps Tagger!</a>
 
 
       <!-- Right hand nav bar options -->
 
         <div class="collapse navbar-collapse">
           <div class="nav navbar-nav navbar-right">
-            <li class="header-link"><a href='/'>News Tagger</a></li>
-            <li class="header-link"><a href='/interps'>Interps Tagger</a></li>
+            <div class="header-link"><a href='/'>News Tagger</a></div>
           </div>
         </div>
     </div>
   </div>
-  <h1>Tagging History</h1><br>
+  <h1>Boom Cha Cha! Boom Cha Cha!</h1><br>
   <div class="container-fluid">
     <div class="col-md-10 col-md-offset-1">
       {{#each entries}}
     
-        <a href="{{link}}" target="_blank">{{title}}</a><br><br>
-        <b>Summary: </b><span class="summary">{{{summary}}}</span>
-        <br><br>
-        <form action="/tagged", method="post">
-        {{#if_eq publish "true"}}
-          <input type="radio", name="publish", value="true" checked="checked">Publish
-          <input type="radio", name="publish", value="false">Don't Publish<br><br>
-        {{else}}
-          <input type="radio", name="publish", value="true">Publish
-          <input type="radio", name="publish", value="false" checked="checked">Don't Publish<br><br>
-        {{/if_eq}}
-          <input type="hidden", name="id", value="{{id}}">
-          <input name="topics" id="taggedTopics" value="{{m_topics}}" type="hidden">
-          <ul id="topicTags" style="width:80%;" value=""></ul>
-          <button type="submit", name="submit", class="btn btn-sm btn-success btn-tag" value="submit">Tag!</button>
-        </form>
-        <br>
-        <hr>
+      <a href="{{link}}" target="_blank">{{title}}</a>&nbsp;&nbsp;
+      <br>
+      Publication Date: {{publication_date}}<br><br>
+      <br>
+      
+      <form action="/interps", method="post">
+        <b>Current Topics: </b>{{topic}}<br><br> 
+        <input type="hidden", name="id", value="{{id}}">
+        <input name="topics" id="taggedTopics" value="{{topic}}" type="hidden">
+        <ul id="topicTags" style="width:80%;" value=""></ul>
+        <button type="submit", name="submit", class="btn btn-sm btn-success btn-tag" value="submit">Submit!</button>
+      </form>
+      <br>
+      <hr>
       {{/each}}
     </div>
   </div>
