@@ -6,7 +6,7 @@ var r = require('rethinkdb'),
 
 exports.index = function(req, res){
 
-  r.table('interps').filter(function(tag){return tag.hasFields('tagged').not()}).orderBy(r.desc('creation_time')).limit(1).run(self.connection, function(err, cursor){
+  r.table('interps').filter(function(tag){return tag.hasFields('tagged').not()}).orderBy(r.desc('publication_date')).limit(1).run(self.connection, function(err, cursor){
     cursor.toArray(function(err, results) {
       if(err) throw err;
       else res.render('interps', {entries: results});
