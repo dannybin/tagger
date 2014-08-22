@@ -1,0 +1,77 @@
+<html>
+<head>
+    <title>Email News</title>
+    
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <link href="stylesheets/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/tagit.ui-zendesk.css" rel="stylesheet" type="text/css">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="javascripts/tag-it.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+ 
+<body>
+
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <!-- Logo -->
+
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="navbar-brand navbar-left" href="#" name="top">Jurispect Daily Email News!</a>
+
+
+      <!-- Right hand nav bar options -->
+
+        <div class="collapse navbar-collapse">
+          <div class="nav navbar-nav navbar-right">
+            <li class="header-link"><a href='/'>News Tagger</a></li>
+            <li class="header-link"><a href='/interps'>Interps Tagger</a></li>
+          </div>
+        </div>
+    </div>
+  </div>
+  <h1>Jurispect Engagment Email News for {{date}}</h1><br>
+            
+  <div class="container-fluid">
+    <div class="col-md-10 col-md-offset-1">
+      {{#each entries}}
+      
+      <a href="{{link}}" target="_blank">{{title}}</a>&nbsp;&nbsp;
+      Source: {{source}}<br><br>
+      {{/each}}
+      <br><br>
+      <form action="/news", method="post">
+        <div class="form-group">
+          <b>News Title: </b><br>
+          <input type="text", name="title" class="form-control input-lg" placeholder="Input Title"/>
+         </div>
+        <div class="form-group">
+          <b>News Link: </b><br>
+          <input type="text", name="link" class="form-control input-lg" placeholder="Full URL Please..."/>
+        </div>
+        <div class="form-group">
+          <b>News Source: </b><br>
+          <input type="text", name="source" class="form-control input-sm" placeholder="Input News Source"/>
+        </div>
+        <br>
+
+        <button type="submit", name="submit", class="btn btn-sm btn-success btn-tag" value="submit">Submit</button>
+      </form>
+      <br>
+      <hr>
+
+    </div>
+  </div>
+ 
+</body>
+</html>
