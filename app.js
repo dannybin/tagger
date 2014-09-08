@@ -18,7 +18,6 @@ var r = require('rethinkdb');
 var connection = null;
 r.connect( {host: '162.242.238.193', port: 28015}, function(err, conn) {
     if (err) throw err;
-    conn.use('jurispect');
     routes.connection = conn;
     tagged.connection = conn;
     interps.connection = conn;
@@ -62,6 +61,7 @@ app.get('/interps', interps.index);
 app.post('/interps', interps.update);
 app.get('/news', news.index);
 app.post('/news', news.insert);
+//app.get('/knowtify', news.knowtify);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
