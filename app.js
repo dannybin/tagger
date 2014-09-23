@@ -61,6 +61,7 @@ app.get('/interps', interps.index);
 app.post('/interps', interps.update);
 app.get('/news', news.index);
 app.post('/news', news.insert);
+app.post('/delete_news', news.delete);
 //app.get('/knowtify', news.knowtify);
 
 http.createServer(app).listen(app.get('port'), function(){

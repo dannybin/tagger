@@ -45,9 +45,15 @@
   <div class="container-fluid">
     <div class="col-md-10 col-md-offset-1">
       {{#each entries}}
-      
-      <a href="{{link}}" target="_blank">{{title}}</a>&nbsp;&nbsp;
-      Source: {{source}}<br><br>
+      <form action="/delete_news", method="post">
+        <a href="{{link}}" target="_blank">{{title}}</a>&nbsp;&nbsp;
+        Source: {{source}} &nbsp;&nbsp;
+        <input type='hidden', name='id', value='{{id}}'/>
+        <input type="submit", name="delete", value="X"/>
+         <br><br>
+
+      </form>
+
       {{/each}}
       <br><br>
       <form action="/news", method="post">

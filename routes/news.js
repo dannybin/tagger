@@ -53,6 +53,16 @@ exports.insert = function(req, res){
         else res.redirect('/news');
     });
 }
+
+exports.delete = function(req, res){
+  var id = req.body.id;
+  
+  r.db('jurispect').table('email_news').get(id).delete().
+    run(self.connection, function(err, result) {
+        if (err) throw err;
+        else res.redirect('/news');
+    });
+}
 /*
 exports.knowtify = function (req, res){
   var users;
