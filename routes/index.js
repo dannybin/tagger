@@ -3,10 +3,17 @@ var r = require('rethinkdb'),
     assert = require('assert'),
     self = this;
 
+var now = new Date();
+var dd = now.getDate();
+if(dd<10) {dd = '0'+dd;}
+var mm = now.getMonth()+1;
+if(mm<10) {mm = '0'+mm;}
+var yyyy = now.getFullYear();
+var today = yyyy +'-'+mm+'-'+dd;
 
 exports.index = function(req, res){
 
-  r.db('jurispect').table('news').getAll('Not Tagged', {index: 'publish'}).orderBy(r.desc('creation_time')).limit(200).run(self.connection, function(err, cursor){
+  r.db('jurispect').table('news').getAll(today, {index: 'creation_time'}).filter(r.row('publish').eq('Not Tagged')).limit(200).run(self.connection, function(err, cursor){
     cursor.toArray(function(err, results) {
       if(err) throw err;
       else res.render('index', {entries: results});
