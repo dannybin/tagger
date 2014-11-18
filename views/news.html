@@ -47,7 +47,8 @@
       {{#each entries}}
       <form action="/delete_news", method="post">
         <a href="{{link}}" target="_blank">{{title}}</a>&nbsp;&nbsp;
-        Source: {{source}} &nbsp;&nbsp;
+        Source: {{source}} &nbsp;&nbsp;&nbsp;
+        Industry: {{industry}} &nbsp;&nbsp;&nbsp;
         <input type='hidden', name='id', value='{{id}}'/>
         <input type="submit", name="delete", value="X"/>
          <br><br>
@@ -70,6 +71,62 @@
           <input type="text", name="source" class="form-control input-sm" placeholder="Input News Source"/>
         </div>
         <br>
+
+        <b>Industry: </b><br>
+        <div class="btn-group" data-toggle="buttons"> 
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Financial Services">Financial Services
+          </div>
+          
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Corporate Securities">Corporate Securities
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Housing and Real Estate">Housing and Real Estate
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Technology and Telecommunications">Technology and Telecommunications
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Food, Drug and Healthcare">Food, Drug and Healthcare
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Chemicals and Manufacturing">Chemicals and Manufacturing
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Consumer Protection">Consumer Protection
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Energy">Energy
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Environmental and Natural Resources">Environmental and Natural Resources
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Transportation and Aviation">Transportation and Aviation
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Government Procurement and Administration">Government Procurement and Administration
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Labor and Employment">Labor and Employment 
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Trade">Trade
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Education">Education
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Tax and ERISA">Tax and ERISA 
+          </div> 
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Media and Entertainment">Media and Entertainment
+          </div>
+          <div class="btn btn-primary" style="margin:1px;">
+            <input type="radio", name="industry", value="Corporate Governance">Corporate Governance
+          </div>
+        </div>
 
         <button type="submit", name="submit", class="btn btn-sm btn-success btn-tag" value="submit">Submit</button>
       </form>

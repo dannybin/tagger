@@ -46,8 +46,9 @@ exports.insert = function(req, res){
   var title = req.body.title;
   var link = req.body.link;
   var source = req.body.source;
+  var industry = req.body.industry;
   
-  r.db('jurispect').table('email_news').insert({title: title, link: link, source: source, creation_time: today}).
+  r.db('jurispect').table('email_news').insert({title: title, link: link, source: source, industry: industry, creation_time: today}).
     run(self.connection, function(err, result) {
         if (err) throw err;
         else res.redirect('/news');
